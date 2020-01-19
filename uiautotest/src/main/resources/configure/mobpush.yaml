@@ -1,0 +1,5 @@
+platformName: 'Android'
+deviceName: 'Android Emulator'
+appPackage: 'com.mob.demo.mobpush'
+appActivity: '.MainActivity'
+
