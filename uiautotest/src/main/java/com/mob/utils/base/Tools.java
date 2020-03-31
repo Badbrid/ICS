@@ -134,7 +134,7 @@ public class Tools {
         List<String> deviceIds = new ArrayList<>();
         List<String> al  = runExec("adb devices");
         if (al.size() > 0) {
-            for (int i =0; i < al.size() ;i++){
+            for (int i =1; i < al.size() ;i++){
                 String tmpStr = al.get(i);
                 if(tmpStr != null && tmpStr.contains("device")){
                     tmpStr = tmpStr.replace("device","").trim();
