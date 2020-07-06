@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.liang.setting.dao.mapper.ext.ExtUserRoleMapper">
+
+<!--    <resultMap id="BaseResultMap" type="com.example.liang.setting.dao.dataObject.UserRole">-->
+<!--        <id column="id" jdbcType="VARCHAR" property="id" />-->
+<!--        <result column="user_id" jdbcType="VARCHAR" property="userId" />-->
+<!--        <result column="role_id" jdbcType="VARCHAR" property="roleId" />-->
+<!--        <result column="source_id" jdbcType="VARCHAR" property="sourceId" />-->
+<!--        <result column="create_time" jdbcType="BIGINT" property="createTime" />-->
+<!--        <result column="update_time" jdbcType="BIGINT" property="updateTime" />-->
+<!--    </resultMap>-->
+
+
+    <select id="selectByUserId1" parameterType="java.lang.String" resultType="com.example.liang.setting.dao.dataObject.UserRole">
+        select *
+        from user_role
+        where user_id = #{userId}
+    </select>
+
+
+
+</mapper>

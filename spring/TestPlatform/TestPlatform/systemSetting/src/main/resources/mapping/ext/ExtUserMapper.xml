@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.liang.setting.dao.mapper.ext.ExtUserMapper">
+    <resultMap id="BaseResultMap" type="com.example.liang.setting.dao.dataObject.User">
+        <id column="id" jdbcType="VARCHAR" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+        <result column="create_time" jdbcType="BIGINT" property="createTime" />
+        <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+        <result column="language" jdbcType="VARCHAR" property="language" />
+        <result column="last_workspace_id" jdbcType="VARCHAR" property="lastWorkspaceId" />
+        <result column="last_organization_id" jdbcType="VARCHAR" property="lastOrganizationId" />
+        <result column="phone" jdbcType="VARCHAR" property="phone" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, name, email, password, status, create_time, update_time, language, last_workspace_id,
+        last_organization_id, phone
+    </sql>
+    <select id="selectByEmail" parameterType="java.lang.String" resultType="com.example.liang.setting.dao.dataObject.User">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where email = #{email,jdbcType=VARCHAR}
+    </select>
+    <select id="selectPasswordByUserId" parameterType="java.lang.String" resultType="string">
+        select
+        password
+        from user
+        where id = #{userId,jdbcType=VARCHAR}
+    </select>
+
+</mapper>
